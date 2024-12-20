@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic des Maladies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Diagnostic des Maladies</h1>
+    <form method="POST" action="/">
+        <label for="symptoms">Entrez vos symptômes :</label><br>
+        <textarea id="symptoms" name="symptoms" rows="5" cols="50" required></textarea><br><br>
+        <input type="submit" value="Diagnostiquer">
+    </form>
+    {% if prediction %}
+    <div class="result">
+        <p>{{ prediction }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
